@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import InputField from "./InputFields";
+import Navigator from "./Navigator";
+import Options from "./Options";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import MenuCard from "./MenuCard";
+import FeeStructue from "./FeeStructure";
+import RoomAvailabe from "./RoomAvailable";
+import Payments from "./Payments";
+import Complaints from "./Complaints";
+import MessStaff from "./MessStaff";
+import Success from "./Success";
 
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navigator />
+        <Switch>
+          <Route path="/" exact component={InputField} />
+          <Route path="/options" component={Options} />
+          <Route path="/menucard" component={MenuCard} />
+          <Route path="/feestructure" component={FeeStructue} />
+          <Route path="/rooms" component={RoomAvailabe} />
+          <Route path="/payments" component={Payments} />
+          <Route path="/complaints" component={Complaints} />
+          <Route path="/staff" component={MessStaff} />
+          <Route path="/success" component={Success}/>
+        </Switch>
+      </Router>
     </div>
   );
 }
