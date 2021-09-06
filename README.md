@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-
+Visit https://rvce-hostel.netlify.app/ to view this project. 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
