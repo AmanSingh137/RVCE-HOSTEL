@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Card, InputGroup, FormControl} from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Card, InputGroup, FormControl } from "react-bootstrap";
+import { useHistory } from 'react-router-dom';
 const InputField = () => {
    // let editor = 0;
+   let history = useHistory();
    const [nameField, setNameField] = useState('');
    const nameChangeHandler = (event) => {
        event.preventDefault();
@@ -19,7 +20,10 @@ const InputField = () => {
    const submitHandler = () => {
        if(nameField.length !== 0 && usnField.length !== 0) {
            //console.log("editing success");
-           setPath('/options');
+           //setPath('/options');
+           if(nameField === "admin" && usnField === "admin123")
+           history.push('/adminoptions');
+           else history.push('/options');
        }
        else {
            alert("Valid input required!");
@@ -45,7 +49,7 @@ const InputField = () => {
           />
         </InputGroup>
         <div className="d-grid gap-2">
-        <Link to={path} className="btn btn-outline-primary" onClick={submitHandler}>Submit</Link>
+        <button to={path} className="btn btn-outline-primary" onClick={submitHandler}>Submit</button>
         </div>
       </Card.Body>
     </Card>

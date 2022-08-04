@@ -10,10 +10,9 @@ import Payments from "./Payments";
 import Complaints from "./Complaints";
 import MessStaff from "./MessStaff";
 import Success from "./Success";
+import AdminOptions from "./AdminOptions";
 
 function App() {
-
-
   return (
     <div className="App">
       <Router>
@@ -21,6 +20,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={InputField} />
           <Route path="/options" component={Options} />
+          <Route path="/adminoptions" component={AdminOptions} />
           <Route path="/menucard" component={MenuCard} />
           <Route path="/feestructure" component={FeeStructue} />
           <Route path="/rooms" component={RoomAvailabe} />
