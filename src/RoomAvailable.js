@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './RoomAvailable.css';
+import { Link } from 'react-router-dom';
 
 const RoomAvailabe = () => {
     const [rooms, setRooms] = useState([]);
@@ -98,20 +99,20 @@ const RoomAvailabe = () => {
                             })
                         }
                     </div>
-                    {room.length > 0 ? <form action="submit">
-                        <input type="text" placeholder='Room Number' value={room} onChange={(e) => {
+                    {room.length > 0 ? <form action="submit" style={{ display: "flex", flexDirection: "column" }}>
+                        <input type="text" placeholder='Room Number' className='input-form' value={room} onChange={(e) => {
                             setRoom(e.target.value);
                         }} />
-                        <input type="text" placeholder='Name' value={name} onChange={(e) => {
+                        <input type="text" placeholder='Name' className='input-form' value={name} onChange={(e) => {
                             setName(e.target.value);
                         }} />
-                        <input type="text" value={usn} placeholder='USN' onChange={(e) => {
+                        <input type="text" value={usn} className='input-form' placeholder='USN' onChange={(e) => {
                             setUSN(e.target.value);
                         }} />
-                        <input type="text" value={phn} placeholder="Phone Number" onChange={(e) => {
+                        <input type="text" value={phn} className='input-form' placeholder="Phone Number" onChange={(e) => {
                             setPhn(e.target.value);
                         }} />
-                        <button onClick={(e) => {
+                        <button className='input-form' onClick={(e) => {
                             e.preventDefault();
                             axios.post("http://localhost:5000/applications", {
                                 roomNo: room,
@@ -119,7 +120,7 @@ const RoomAvailabe = () => {
                                 USN: usn,
                                 Phone: phn
                             })
-                        }}>Submit</button>
+                        }}><Link to="/roomstat" style={{ textDecoration: "none", color: "black" }}>Submit</Link></button>
                     </form> : ""}
                 </> : <h1>Loading...</h1>}
         </>

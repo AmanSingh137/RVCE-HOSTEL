@@ -11,6 +11,7 @@ import Complaints from "./Complaints";
 import MessStaff from "./MessStaff";
 import Success from "./Success";
 import AdminOptions from "./AdminOptions";
+import RoomStatus from "./RoomStatus";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/complaints" component={Complaints} />
           <Route path="/staff" component={MessStaff} />
           <Route path="/success" component={Success}/>
+          <Route path="/roomstat" component={RoomStatus}/>
         </Switch>
       </Router>
     </div>

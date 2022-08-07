@@ -62,7 +62,7 @@ const Options = () => {
                     <Card.Text>
                         View the fee structure set for various categories. 
                     </Card.Text>
-                    <Link to="/feestructure" >Card Link</Link>
+                    <Link to="/feestructure" >View fees structure</Link>
                 </Card.Body>
             </Card>
         </div>
@@ -74,7 +74,7 @@ const Options = () => {
                     <Card.Text>
                         Do safeless and contactless payments by clicking the link below. 
                     </Card.Text>
-                    <Link to="/payments">Payments Link</Link>
+                    <Link to="/payments">Make payments!</Link>
                 </Card.Body>
             </Card>
         </div>

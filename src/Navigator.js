@@ -18,7 +18,7 @@ const Navigator = () => {
           alt="RV COLLLEGE OF ENGINEERING"
         />
         &emsp;{" "}
-        <Link to="/" className="text-secondary mt-2" style={linkStyle}>RVCE HOSTEL</Link>
+        <Link to="/options" className="text-secondary mt-2" style={linkStyle}>RVCE HOSTEL</Link>
       </Nav>
     </Container>
   </Navbar>
